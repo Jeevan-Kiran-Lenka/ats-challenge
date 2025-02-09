@@ -9,8 +9,9 @@ import { pdfjs } from "react-pdf";
 import { jsPDF } from 'jspdf';
 import { Separator } from "@/components/ui/separator";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
+import { DynamicQuillEditor } from "@/components/DynamicQuillEditor";
+// import ReactQuill from 'react-quill';
+// import 'react-quill/dist/quill.snow.css';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js`;
 
@@ -163,12 +164,11 @@ export default function CVProcessingApp() {
 
             <div className="bg-white rounded-lg shadow-sm p-6">
               <h2 className="text-xl font-semibold mb-4">Editor & Instructions</h2>
-              <ReactQuill 
-                theme="snow"
+              <DynamicQuillEditor 
                 value={editorContent}
                 onChange={setEditorContent}
                 className="h-[200px] mb-4"
-              />
+                />
               <div className="flex gap-2 mt-8">
                 <Button 
                   onClick={handleChatPrompt}
