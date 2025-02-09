@@ -1,9 +1,12 @@
-import Image from "next/image";
+import CVProcessingApp from "./cv-processing/CVProcessingApp";
+
 
 export default function Home() {
   return (
     <div>
-      <h1>ATS Challenge</h1>
+    <div><
+      h1>ATS Anomoyziation</h1></div>
+      <CVProcessingApp/>
     </div>
   );
 }
